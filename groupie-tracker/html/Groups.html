@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#" id="Search">Search</a>
+    <a href="./Groups.html">Groups</a>
+    <a href="#">About</a>
+    </div>
+
+
+
+  <!-- Use any element to open the sidenav -->
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  
+  <script src="../scripts/main-btn.js"></script>
+
+  
+
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    
+        
+    <div id="main">
+        {{range .}} 
+        <div class="container mt-3" id="div1">
+
+            <br clear="all" /><br /> <br clear="all" /><br /> <br clear="all" /><br /> <br clear="all" /><br />
+            <p><img src="{{.Image}}" class="rounded-circle" id="img1">LOLOWKA</p>
+            <br>
+        <div class="tab">
+            <button class="tablinks{{.ID}}" onclick="openCity(event, 'London{{.ID}}','tabcontent{{.ID}}','tablinks{{.ID}}','defaultOpen{{.ID}}')" id="defaultOpen{{.ID}}">London</button>
+            <button class="tablinks{{.ID}}" onclick="openCity(event, 'Paris{{.ID}}','tabcontent{{.ID}}','tablinks{{.ID}}','defaultOpen{{.ID}}')">Paris</button>
+            <button class="tablinks{{.ID}}" onclick="openCity(event, 'Tokyo{{.ID}}','tabcontent{{.ID}}','tablinks{{.ID}}','defaultOpen{{.ID}}')">Tokyo</button>
+          </div>
+          
+          <div class="tabcontent">
+          <div id="London{{.ID}}" class="tabcontent{{.ID}}">
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+          </div>
+          
+          <div id="Paris{{.ID}}" class="tabcontent{{.ID}}">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p>
+          </div>
+          
+          <div id="Tokyo{{.ID}}" class="tabcontent{{.ID}}">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+          </div> 
+         </div>
+         
+          <script >
+                function openCity(evt, cityName,tabcon,tablin,def) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName(tabcon);
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                    console.log(tabcontent[i])
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName(tablin);
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace("active", "");
+                    console.log(tablinks[i])
+                }
+
+                // Show the current tab, and add an "active" class to the link that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+                console.log(evt.currentTarget.className)
+                } 
+                document.getElementById("defaultOpen{{.ID}}").click();
+          </script>
+          
+        </div>
+        {{end}}
+        <!-- {{range .}}
+        <div>
+            <pre>{{.ID}}</pre>
+            <img src="{{.Image}}" class="rounded-circle">
+            <pre>{{.Name}}"</pre>
+            <h1>{{range .Members}}</h1>
+            <p>{{.}}</p>
+            {{end}}
+            <pre>Created Date: {{.CreationDate}}</pre>
+            <pre>The First Album: {{.FirstAlbum}}</pre>
+            <pre>{{.ConcertDates}}</pre>
+            <pre>{{.Relations}}</pre>
+        </div>
+        {{end}}
+     -->
+    </div>  
+</body>
+
+</html>

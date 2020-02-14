@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <!-- _________________________________________________________________________________________________ -->
+    <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#" id="Search">Search</a>
+    <a href="./Groups.html">Groups</a>
+    <a href="#">About</a>
+    </div>
+
+
+
+  <!-- Use any element to open the sidenav -->
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  
+  <script src="../scripts/main-btn.js"></script>
+
+
+
+
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+     <div id="main">
+       
+      
+        <!-- {{range .}}
+        <div>
+            <pre>{{.ID}}</pre>
+            <img src="{{.Image}}" class="rounded-circle">
+            <pre>{{.Name}}"</pre>
+            <h1>{{range .Members}}</h1>
+            <p>{{.}}</p>
+            {{end}}
+            <pre>Created Date: {{.CreationDate}}</pre>
+            <pre>The First Album: {{.FirstAlbum}}</pre>
+            <pre>{{.ConcertDates}}</pre>
+            <pre>{{.Relations}}</pre>
+        </div>
+        {{end}}
+     -->
+    </div>  
+</body>
+
+</html>
